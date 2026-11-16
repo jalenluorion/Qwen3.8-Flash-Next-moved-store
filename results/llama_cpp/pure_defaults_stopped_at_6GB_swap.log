@@ -1,0 +1,4 @@
+CMD: llama-completion -m baseline/gguf/UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 4096 -n 24 --temp 0 -no-cnv -lv 3 -p The history of the city of Pittsburgh begins with
+0.00.001.983 I llama_completion: llama backend init
+0.00.378.564 I llama_completion: load the model and apply lora adapter, if any
+0.02.795.922 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --load-mode none for better performance

@@ -78,6 +78,12 @@ bypassed on the stores, so every byte counted was read from the drive.
 | fetched on demand, kept only across adjacent tokens (`--keep 1`) | 2.16, 2.04 | 741 MB | 7.5 GB |
 | fetched on demand, nothing kept (`--keep 0`) | 1.44, 1.34 | 1,268 MB | 7.5 GB |
 
+For comparison, stock llama.cpp 1.0.0 (Homebrew) with Unsloth's UD-Q4_K_XL file of the same model (111 GB), on the same Mac
+and prompt: with its default settings the load never finishes on 16 GB (it repacks the 4-bit weights into ordinary
+memory); with memory-mapped weights, CPU only and `--no-repack` it runs at 0.45 and 0.39 tokens/s (a third run gave
+0.11), and at 0.20 with the GPU allowed. That is a different 4-bit file and a CPU computation, so it shows what the
+stock tool gives, not a controlled ablation; the fetch-on-demand rows above are the like-for-like comparison. Logs: [results/llama_cpp](results/llama_cpp).
+
 At the default a token takes 170 to 180 ms, about 100 ms of it waiting on expert reads, and 83% of the released router's top-10
 are in memory when the layer runs. The drive sets the speed: the same engine with reads skipped (`--sim-reads`,
 timing only) runs at 10.5 tokens/s.

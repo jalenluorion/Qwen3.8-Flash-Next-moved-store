@@ -1,0 +1,28 @@
+CMD: llama-completion -m baseline/gguf/UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -lm mmap -dev none -ngl 0 --no-repack -c 4096 -n 120 --temp 0 -no-cnv -lv 3 -p The history of the city of Pittsburgh begins with
+0.00.309.199 I llama_completion: llama backend init
+0.00.309.204 I llama_completion: load the model and apply lora adapter, if any
+0.00.474.505 W common_fit_params: failed to fit params to free device memory: was unable to fit model into system memory by reducing context, abort
+0.53.398.418 I cmn          init: llama threadpool init, n_threads = 4
+1.06.123.060 I 
+1.06.123.116 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | 
+1.06.123.116 I 
+1.06.123.552 I sampler seed: 4294967295
+1.06.123.563 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+	top_k = 20, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+1.06.123.569 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> greedy 
+1.06.123.569 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 120, n_keep = 0
+1.06.123.569 I 
+The history of the city of Pittsburgh begins with the Lenape, a Native American people who inhabited the region. The Lenape called the area "Shannopin, " which means "two rivers, " referring to the confluence of the Allegheny and Monongahela rivers, which form the Ohio River. This strategic location made the area significant for both Native Americans and European explorers. In 1754, the French built Fort Duquesne at the confluence of the Allegheny and Monongahela rivers, naming it after Ange Duquesne de Menneville, Marquis Duquesne, the
+
+18.44.208.471 I common_perf_print:    sampling time =     115.16 ms
+18.44.208.472 I common_perf_print:    samplers time =      18.90 ms /   129 tokens
+18.44.208.473 I common_perf_print:        load time =   65601.17 ms
+18.44.208.474 I common_perf_print: prompt eval time =   21034.60 ms /     9 tokens ( 2337.18 ms per token,     0.43 tokens per second)
+18.44.208.474 I common_perf_print:        eval time = 1036916.31 ms /   119 runs   ( 8713.58 ms per token,     0.11 tokens per second)
+18.44.208.475 I common_perf_print:       total time = 1058085.42 ms /   128 tokens
+18.44.208.478 I common_perf_print: unaccounted time =      19.35 ms /   0.0 %      (total - sampling - prompt eval - eval) / (total)
+18.44.208.479 I common_perf_print:    graphs reused =        118
+18.44.208.479 I common_perf_print:   graph reallocs =          0    /     0        (same size) / (changed size)

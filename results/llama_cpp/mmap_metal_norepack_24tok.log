@@ -1,0 +1,28 @@
+CMD: llama-completion -m baseline/gguf/UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -lm mmap --no-repack -c 4096 -n 24 --temp 0 -no-cnv -lv 3 -p The history of the city of Pittsburgh begins with
+0.00.003.510 I llama_completion: llama backend init
+0.00.203.881 I llama_completion: load the model and apply lora adapter, if any
+0.02.497.953 W llama_model_loader: tensor overrides to CPU are used with mmap enabled - consider using --load-mode none for better performance
+0.57.939.123 I cmn          init: llama threadpool init, n_threads = 4
+1.08.289.116 I 
+1.08.289.828 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | 
+1.08.289.829 I 
+1.08.351.799 I sampler seed: 4294967295
+1.08.351.821 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+	top_k = 20, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+1.08.352.012 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> greedy 
+1.08.352.014 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 24, n_keep = 0
+1.08.352.014 I 
+The history of the city of Pittsburgh begins with the Lenape, who inhabited the area for thousands of years before European contact. The first European to visit the region was
+
+3.22.707.949 I common_perf_print:    sampling time =     139.46 ms
+3.22.707.951 I common_perf_print:    samplers time =       7.70 ms /    33 tokens
+3.22.707.952 I common_perf_print:        load time =   65864.39 ms
+3.22.707.953 I common_perf_print: prompt eval time =   20611.47 ms /     9 tokens ( 2290.16 ms per token,     0.44 tokens per second)
+3.22.707.953 I common_perf_print:        eval time =  113498.01 ms /    23 runs   ( 4934.70 ms per token,     0.20 tokens per second)
+3.22.707.954 I common_perf_print:       total time =  134418.98 ms /    32 tokens
+3.22.707.954 I common_perf_print: unaccounted time =     170.05 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)
+3.22.707.954 I common_perf_print:    graphs reused =         22
+3.22.707.954 I common_perf_print:   graph reallocs =          1    /     0        (same size) / (changed size)
