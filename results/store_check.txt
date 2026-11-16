@@ -1,0 +1,16 @@
+== expert record: layer 0 expert 7, record 2768896 B, offsets {'gate_proj': 0, 'up_proj': 921600, 'down_proj': 1843200}, scale_offsets {'gate_proj': 819200, 'up_proj': 1740800, 'down_proj': 2662400}, bias_offsets {'gate_proj': 870400, 'up_proj': 1792000, 'down_proj': 2713600}
+  gate_proj  shape [640, 2560]  max|w| 0.3145  max abs err 0.01141  rel RMS err 9.601%  mean abs err 0.00107
+             vs independent re-quantisation: code mismatches 0/1638400, scale mismatches 0, bias mismatches 0
+             elements beyond half a quantisation step: 0
+  up_proj    shape [640, 2560]  max|w| 0.2207  max abs err 0.01013  rel RMS err 9.477%  mean abs err 0.00105
+             vs independent re-quantisation: code mismatches 0/1638400, scale mismatches 0, bias mismatches 0
+             elements beyond half a quantisation step: 0
+  down_proj  shape [2560, 640]  max|w| 0.4316  max abs err 0.01944  rel RMS err 9.172%  mean abs err 0.000963
+             vs independent re-quantisation: code mismatches 0/1638400, scale mismatches 0, bias mismatches 0
+             elements beyond half a quantisation step: 0
+  record bytes used 2764800, padding 4096 B zero: True; record 0 populated: True; record 511 populated: True
+== n-gram part 0: 1000 random rows of 20000096 (from 8 shard refs), 162 B/row
+  ngram      shape [1000, 160]  max|w| 0.03516  max abs err 0.0001373  rel RMS err 0.662%  mean abs err 4.18e-05
+             per-row rel RMS: median 0.648%  p99 0.884%  max 1.015%; scale range [9.18e-05, 0.000277], zero rows 0
+             vs independent re-quantisation: code mismatches 0/160000, scale mismatches 0
+CHECK PASS

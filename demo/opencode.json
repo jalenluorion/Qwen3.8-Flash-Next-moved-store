@@ -1,0 +1,42 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "store": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen3.8-Flash-Next, experts and n-gram memory on disk (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080/v1",
+        "apiKey": "local",
+        "timeout": false,
+        "headerTimeout": false,
+        "chunkTimeout": false
+      },
+      "models": {
+        "title": {
+          "name": "thread titles (served instantly by the demo server, no model call)",
+          "tool_call": false,
+          "reasoning": false,
+          "attachment": false,
+          "temperature": false,
+          "limit": {
+            "context": 32768,
+            "output": 64
+          }
+        },
+        "Qwen3.8-Flash-Next": {
+          "name": "Qwen3.8-Flash-Next 180B (SSD store)",
+          "tool_call": true,
+          "reasoning": true,
+          "attachment": false,
+          "temperature": true,
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        }
+      }
+    }
+  },
+  "model": "store/Qwen3.8-Flash-Next",
+  "small_model": "store/title"
+}
